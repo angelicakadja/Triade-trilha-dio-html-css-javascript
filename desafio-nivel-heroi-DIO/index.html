@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./assets/img/ked.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/styles/background.css" />
+
+    <title>Hero level!</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Nível do Herói!</h1>
+    </header>
+
+    <main>
+      <div id="background">
+        <video loop autoplay muted>
+          <source
+            src="./assets/video/cena-superman-aprendendo-a-voar.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div class="containner">
+        <section id="course-content"></section>
+        <section>
+          <h2>Desafio DIO</h2>
+        </section>
+        <td>Quanto o nome do seu Herói?</td>
+        <input type="input" id="nome" placeholder="Informe seu nome" />
+        <td>Quanto XP tem seu Herói?</td>
+        <input type="input" id="xp" placeholder="Informe o XP" />
+      </div>
+      <div id="frm1">
+        <button class="button" onclick="classificacaoDoHeroi()">
+          Descubra aqui!
+        </button>
+      </div>
+    </main>
+
+    <script src="./assets/src/scripts.js"></script>
+
+    <footer>
+      <img src="./assets/img/ked.png" alt="Logo K&D" width="65px" />
+      <a id="credito" href="https://github.com/angelicakadja" target="_blank"
+        >Página by Angélica Kadja!</a
+      >
+      <a href="https://youtu.be/ATQiEG9mb-A?si=4mIfJCv8l6WIrl47" target="_blank"
+        >Vídeo por: Pattie Fahey!</a
+      >
+    </footer>
+  </body>
+</html>
