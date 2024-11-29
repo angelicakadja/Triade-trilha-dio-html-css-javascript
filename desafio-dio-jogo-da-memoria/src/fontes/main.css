@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  justify-content: center; /*Alinhamento horizontal.*/
+  align-items: center; /*Alinhamento vertical.*/
+  min-height: 100vh; /*100vh é igual 100% de altura.*/
+
+  background: #fc1e8a;
+  user-select: none; /*Para que o usuário não possa selecionar o elemento, nesse caso os emojis.*/
+}
+
+.container {
+  position: relative; /*Manipular para sobrepor.*/
+  display: flex;
+  flex-direction: column; /*Elemento um abaixo do outro.*/
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /*Espaço entre os elementos*/
+  left: 100px;
+  background: -webkit-linear-gradient(
+    -240deg,
+    /*Esse valor de deg é o grau que raio degradê irá girar, do professor era 325deg.*/
+      #03001e 0%,
+    #7303c0 30%,
+    #ec38bc 70%,
+    #fdeff9 100% /*Aqui são as cores e percentuais de cor*/
+  );
+  padding: 40px 60px; /*1° valor para top e botton e 2° valor lateriais.*/
+}
+
+h2 {
+  font-size: 3em;
+  color: white;
+  text-transform: uppercase; /*Colocar todas as letras em maiúsculas.*/
+  letter-spacing: 0.1em; /*Espaçamento entre as letras.*/
+}
+
+.reset {
+  padding: 5px 20px;
+  width: 100%; /*Ocupar 100% da div dele.*/
+  color: #000;
+  background-color: #fff;
+  border: none;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer; /*Ao passar o cursor em cima do botão mudar para mãozinha.*/
+  font-weight: 600;
+}
+
+.reset:focus {
+  /*Peguei a classe .reset e usei a propriedade focus para que ao clicar
+    no botão mostrar que foi clicado mudando a cor.*/
+  color: #fc1e8a;
+  background-color: #262809;
+}
+
+.game {
+  width: 430px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  /*Para o flex-wrap: wrap funcionar preciso ter o display flex.
+  Essa propriedade é para que caso um elemento ultrapasse o final da linha,
+  ele quebre indo para a próxima linha, linha debaixo.*/
+  gap: 10px;
+  transform-style: preserve-3d; /*Para que as animações fiquem com efeito 3d.*/
+  perspective: 500px; /*Efeito ao girar as cartinhas.*/
+}
+
+.item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-size: 4em;
+  transform: rotateY(180deg); /*Fazer a rotação das cartinhas.*/
+  transition: 0.25s; /*Tempo que demora para elas virarem.*/
+}
+
+.item::after {
+  /*Criando um pseudo elemento após minha classe item para esconder as cartinhas.*/
+  content: ""; /*Content é conteúdo, e abre e fecha aspas vazio para que não tenha nenhum elemento dentro dele.*/
+  position: absolute;
+  inset: 0; /*Sobrepor o elemento pai, nesse caso a class item.*/
+  background: #404040;
+  transition: 0.25s;
+  transform: rotateY(0deg); /*Para o elemento rodar em 0deg.*/
+  backface-visibility: hidden; /*Ele vai esconder o outro card escondido, não está só sobrepondo.*/
+  /* opacity: 0.85; Essa propriedade é para ver o que está atrás.*/
+}
+
+.item.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.item.boxOpen::after,
+.item.boxMatch::after {
+  transform: rotateY(180deg);
+}
+
+.container-text-center {
+  cursor: pointer;
+  border-style: dashed;
+  border-radius: 5px;
+  height: 45px;
+  padding: 5px 25px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: inline;
+  margin-top: -700px;
+  right: 270px;
+  letter-spacing: 1em;
+}

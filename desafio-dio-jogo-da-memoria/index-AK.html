@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da memória</title>
+
+    <link
+      rel="shortcut icon"
+      href="./src/img/jogo-da-memoria.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./src/fontes/main.css" />
+    <link rel="stylesheet" type="text/css" href="./src/fontes/reset.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>JOGO DA MEMÓRIA</h2>
+      <div class="game"></div>
+      <button class="reset" onclick="window.location.reload()">
+        RESET GAME
+      </button>
+      <!-- Evento onclick para resetar, recarregar a página, pegando a minha janela.
+       O método location.reload é para pegar a minha url atual.
+       Se window.location.reload(true), ele recarrega a página sem armazenar cache no navegador.
+       Se window.location.reload(false), página é recarregada usando a versão que
+       está em cache no navegador.
+       Único sentido dessa página é dar o refreh.-->
+    </div>
+
+    <div class="container-text-center">
+      <audio id="audio" autoplay loop>
+        <source src="src/sons/wild-pogo.mp3" type="audio/mp3" />
+        Seu navegador não possui suporte ao elemento audio!
+      </audio>
+
+      <a href="#" onclick="play()"
+        ><img src="src/img/play.png" width="32px" height="32px"
+      /></a>
+      <a href="#" onclick="diminuir_volume()"
+        ><img src="src/img/volume-baixo.png" width="32px" height="32px"
+      /></a>
+      <a href="#" onclick="stop()"
+        ><img src="src/img/stop.png" width="32px" height="32px"
+      /></a>
+    </div>
+
+    <script src="./src/scripts/engine.js" defer></script>
+  </body>
+</html>
