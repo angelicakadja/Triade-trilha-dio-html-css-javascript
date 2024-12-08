@@ -5,7 +5,7 @@
 **📌 Descrição do desafio de código:**
 
 - Este projeto foi baseado em uma Pokédex, limitamos aos 152 Pokémons, englobando apenas a primeira geração + 1 para fechar a página bonitinha.
-- Eequisição feita através da fetch API, utilizando uma API pokeapi.co..
+- Requisição feita através da fetch API, utilizando uma API pokeapi.co..
 
 ---
 
