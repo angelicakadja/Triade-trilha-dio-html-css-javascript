@@ -45,7 +45,7 @@
 
 > #### 🛠️ PROJETO FINAL
 
-![Projeto] (src/ico/pokedex.png)
+![pokedex](https://github.com/user-attachments/assets/79164b62-f151-4e5f-a830-ac6704fd6b38)
 
 ---
 
