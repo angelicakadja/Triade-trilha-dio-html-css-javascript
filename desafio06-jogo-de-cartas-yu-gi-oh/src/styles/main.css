@@ -1,0 +1,143 @@
+body {
+  cursor: url(../assets/cursor/yugicursor.png), default;
+}
+
+button,
+a,
+img:hover,
+button:hover,
+a:hover {
+  cursor: url(../assets/cursor/yamiyugicursorGLOW.png), auto;
+}
+
+.bg-video {
+  position: absolute; /* Para poder manipular ele. */
+  z-index: -2; /* Deixar o vídeo como plano de fundo, atrás de tudo, camada de profundidade. */
+  width: 100vw; /* Ocupar 100% de largura.*/
+  height: 100vh; /* Ocupar 100%de altura. */
+  overflow: hidden; /* Qualquer coisa que sobrepor dele, fique escondido, sem preocupação de mostrar nada a mais. */
+  display: flex;
+  justify-content: center; /* Justificar ao centro. */
+}
+
+.bg-video .video {
+  height: 100vh; /* 100vw ocupa 100% da tela, mas, 100vh ocupa apenas a div. */
+}
+
+.bg-video::after {
+  content: ""; /* Conteúdo vazio. */
+  position: absolute; /* Para manipular o top e o left da div. Pai*/
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.container {
+  position: relative; /* Filho. */
+  z-index: 3; /* Valor positivo é para ter certeza que o elemento ficará na frente do vídeo que tem z-index negativo. */
+  display: flex;
+  height: 100vh;
+}
+
+.container__left {
+  width: 35%;
+  min-width: 300px;
+  display: flex; /* Para poder usar div em coluna. */
+  flex-direction: column; /* Para os elementos ficarem um abaixo do outro. */
+  align-items: center;
+  justify-content: space-around; /* Espaçamento entre os elementos. */
+}
+.container__right {
+  width: 65%;
+}
+
+.score_box {
+  background-color: #fff;
+  padding: 30px; /*Desgrudar das bordas. */
+}
+
+.frame {
+  border: 3px solid #000;
+  border-radius: 5px;
+}
+
+.card_details {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  width: 100%;
+}
+
+#card-name {
+  font-size: 0.8rem;
+}
+
+#card-type {
+  font-size: 1rem;
+}
+
+.card-box__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem;
+}
+
+.card-versus__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0.1rem;
+  height: 300px;
+}
+
+.versus-top,
+.versus-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.versus-bottom {
+  margin-top: 1rem;
+}
+
+#next-duel {
+  display: none; /* Botão ocultado até acabar o jogo.*/
+}
+
+.card-box {
+  height: 9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-infield {
+  height: 11.2rem;
+  width: 8rem;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.2);
+}
