@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box; /* Borda a borda.*/
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select: none; /* Usuário não poder selecionar itens. Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  outline: none; /*Não exibir caixinhas ao clicar na tecla tab. */
+  font-family: "Poppins", sans-serif;
+}

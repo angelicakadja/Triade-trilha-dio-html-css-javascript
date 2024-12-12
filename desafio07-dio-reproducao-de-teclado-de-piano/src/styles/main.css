@@ -1,0 +1,171 @@
+body {
+  display: flex; /* Deixar tudo flexível. */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #e3f2fd;
+  color: #fff;
+}
+
+.container {
+  width: 780px;
+  border-radius: 20px;
+  padding: 35px 40px; /*35px cima e baixo e 40px lados.*/
+  background-color: black;
+}
+
+.container header {
+  color: #b2b2b2;
+  display: flex; /*Por padrão se não passo flex-direction: row, fica no formato linha. */
+  align-items: center;
+  justify-content: space-between; /* Espaço entre os elementos. */
+}
+
+header h2 {
+  font-size: 1.6rem;
+}
+
+header .column {
+  display: flex;
+  align-items: center;
+}
+
+header .column span {
+  font-weight: 500;
+  margin-right: 15px;
+  font-size: 1.19rem;
+}
+
+.volume-slider input {
+  accent-color: #fff;
+}
+
+.keys-check input {
+  /* Caixinha das teclas. */
+  width: 60px;
+  height: 30px;
+  appearance: none; /*Retirando a aparência padrão para estilizar ele abaixo. */
+  border-radius: 30px;
+  background-color: #4b4b4b;
+  cursor: pointer;
+  position: relative;
+  border: dashed 1px #ccc;
+}
+
+.keys-check input::before {
+  /* Bolinha */
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #8c8c8c; /* Cor cinza quando estiver desligado. */
+  position: absolute;
+  top: 50%;
+  left: 0.3rem;
+  border-radius: inherit;
+  position: absolute;
+  transform: translateY(-50%); /*Encaixar dentro da caixinha pai. */
+  transition: all 0.3s ease; /*Movimento da bolinha mais suave. */
+}
+
+.keys-check input:checked::before {
+  /* Bolinha */
+  /*Colocar ele para marcar e desmarcar.*/
+  left: 2.1rem;
+  background-color: #fff; /* Cor branca estiver marcado. */
+}
+
+.piano-keys {
+  /*Configuração genérica. */
+  display: flex;
+  margin-top: 40px;
+}
+
+.piano-keys .key {
+  cursor: pointer;
+  list-style: none; /* Retirar os pontinhos da frente da lista. */
+  color: #a2a2a2;
+  position: relative;
+  text-transform: uppercase; /*Letras 100% do tempo maiúsculas. */
+}
+
+.piano-keys .white {
+  width: 70px;
+  height: 230px;
+  border: 1px solid black;
+  background: linear-gradient(#fff 96%, #eee 4%);
+  border-radius: 8px;
+}
+
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2); /* Inset, sombreado dentro. */
+  background: linear-gradient(to bottom #fff 0%, #eee 100%);
+}
+
+.piano-keys .black {
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px 0 -22px; /* Cima, direita, embaixo, esquerda. */
+  z-index: 2; /*Estar da dimensão acima para não conflitar com o elemento abaixo, no caso a tecla branca. */
+  border: 1px solid black;
+  background: linear-gradient(#333, #000);
+  border-radius: 0 0 5px 5px; /*Superior esquerda, superior direita, inferior direita e inferior esquerda.*/
+}
+
+.piano-keys .black.active {
+  box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1); /* Inset, sombreado dentro. */
+  background: linear-gradient(to bottom #000, #434343);
+}
+
+.piano-keys span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.13rem;
+}
+
+.piano-keys .key.hide span {
+  /* Adicionando dinamicamente essa classe, para esconder as letras. */
+  display: none;
+}
+
+.direitos {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  position: absolute;
+  width: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-wrap: nowrap;
+  margin-top: 720px;
+  /* margin-top: 700px; */
+  background-color: transparent;
+  color: rgb(27, 143, 214);
+}
+
+.direitos a {
+  color: rgb(78, 78, 222);
+  font-style: italic;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* div#interface {
+  width: 900px;
+  height: 753px;
+  margin: 10px auto 10px auto;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+div#interface p#paraum {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  top: 370px;
+  position: absolute;
+  width: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
