@@ -1,0 +1,108 @@
+/* Assistir trailer demais subpáginas. */
+a.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Assistir trailer página 1 Tom Holland. */
+a.link-button-th {
+  margin-top: -200px;
+  margin-left: 700px;
+  position: absolute;
+}
+
+/* Assistir trailer página 2 Tom Holland. */
+a.link-button-th2 {
+  margin-top: -170px;
+  margin-left: 650px;
+  position: absolute;
+}
+
+/* Bolinha vermelha do link trailer demais subpáginas. */
+a.link-button .icon {
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  background-color: var(--primary-color);
+  background-clip: content-box;
+  border: solid 1px white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bolinha vermelha do link trailer página 1 Tom Holland. */
+a.link-button-th .icon-th {
+  margin-top: -8px;
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  background-color: var(--primary-color);
+  background-clip: content-box;
+  border: solid 1px white;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -50px;
+}
+
+/* Bolinha vermelha do link trailer página 2 Tom Holland. */
+a.link-button-th2 .icon-th2 {
+  margin-top: -8px;
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  background-color: var(--primary-color);
+  background-clip: content-box;
+  border: solid 1px white;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -50px;
+}
+
+/* Setinha branca de dentro da bolinha vermelha do link trailer demais subpáginas. */
+a.link-button .icon .play-icon {
+  width: 0;
+  height: 0;
+  border: solid 7px white;
+  /* Para criar esse triângulo branco, coloca cor transparente em top, right e bottom. */
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  margin-right: -7px;
+}
+
+/* Setinha branca de dentro da bolinha vermelha do link trailer página 1 Tom Holland. */
+a.link-button-th .icon-th .play-icon-th {
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 13px;
+  width: 0;
+  height: 0;
+  border: solid 7px white;
+  /* Para criar esse triângulo branco, coloca cor transparente em top, right e bottom. */
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Setinha branca de dentro da bolinha vermelha do link trailer página 2 Tom Holland. */
+a.link-button-th2 .icon-th2 .play-icon-th2 {
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 13px;
+  width: 0;
+  height: 0;
+  border: solid 7px white;
+  /* Para criar esse triângulo branco, coloca cor transparente em top, right e bottom. */
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+a.link-button .label {
+  margin-left: 10px;
+}

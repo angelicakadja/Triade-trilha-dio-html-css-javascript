@@ -1,0 +1,25 @@
+/* Cardzinhos das subpádinas. */
+
+.gallery {
+  padding: 20px;
+  padding-left: 0;
+}
+
+.gallery ul {
+  display: flex; /* Deixar a lista flexível. */
+  flex-direction: row; /* Como o display é flex, essa condição row deixará na mesma linha. */
+}
+
+.gallery ul li {
+  margin-left: 25px;
+}
+
+.gallery ul li:first-child {
+  /*:first-childpegar o 1° elemento. */
+  margin-left: 0;
+}
+
+.gallery ul li a img {
+  border: solid 6px white;
+  border-radius: 15px;
+}

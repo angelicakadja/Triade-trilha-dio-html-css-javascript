@@ -1,0 +1,259 @@
+/* Folhas de estilos importadas de dentro do próprio projeto. */
+@import url("./global.css");
+@import url("./reset.css");
+
+body {
+  background-color: var(--primary-color);
+}
+
+/* Imagem de fundo do homem aranha. */
+body::before {
+  /* Before é um spseudo elemento, ele não está declarado e é criado no CSS virtualmente.
+  E o :: é para declarar que é um pseudo elemento. Before = antes. */
+  content: "";
+  background-image: url("../imagens/spider-man-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Respeite toda a área do elemento. */
+  width: 100%;
+  height: 100%;
+  position: absolute; /* Absolute  é para ficar em cima do body. */
+  opacity: 0.2;
+  transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+  /* Para que a transição ao passar o mouse em cima do card do Homem Aranha tenha uma transição suave. */
+}
+
+/* Menu - tag nav. */
+.s-menu {
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  position: relative; /* Para poder voltar a clicar nos links do menu. */
+}
+
+/* Nomes dos atores. */
+.s-menu__item {
+  display: inline-block;
+  /* Itens lado a lado, dá para trabalhar também margem que o inline não deixaria. */
+  text-transform: uppercase; /* Todas as letras maiúsculas. */
+  margin: 0 1.25rem;
+}
+
+/* Ícone da aranha do menu. */
+.s-menu__icon {
+  width: 2.5rem;
+  margin: 0 1.25rem; /* 0 em cima e embaixo e 1.25rem nas laterais. */
+  vertical-align: middle;
+  /* Para alinhar verticalmente a caixa de um elemento inline dentro da caixa
+  de linha que a contém.
+  Alinha o meio do elemento com a linha de base mais metade da altura x do pai.*/
+}
+
+/* 1 div, onde tem as fotos do homem aranha. */
+.s-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  perspective: 3000px; /* Para colocar um abaulado no carrossel. */
+}
+
+/* Estilizando o card para colocar as imagens do homem aranha dentro. */
+.s-card {
+  border: 0.5rem solid white;
+  width: 100%;
+  height: 70vh;
+  position: absolute;
+  transition: filter 0.5s ease-in-out;
+}
+
+/* Colocar o 1° elemento .s-card para deixar no centro. */
+.s-card:nth-child(1) {
+  transform: rotateY(0deg) translateZ(50vw);
+}
+
+/* Colocar o 2° elemento .s-card na direita. */
+.s-card:nth-child(2) {
+  transform: rotateY(120deg) translateZ(50vw);
+}
+
+/* Colocar o 3° elemento .s-card na esquerda. */
+.s-card:nth-child(3) {
+  transform: rotateY(240deg) translateZ(50vw);
+}
+
+/*São as imagens atrás do homem aranha. */
+.s-card__background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  /* Para que ao passar o mouse em cima seja mais suave, mas, apenas na propriedade opacity, por isso coloca na hora de declarar. */
+}
+
+/*São as imagens do homem aranha. */
+.s-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  transition: 1s ease-in-out; /* Para que ao passar o mouse em cima seja mais suave na transição. */
+}
+
+/* Nomes dos atores nos cards. */
+.s-card__title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  transition: bottom 1s ease-in-out;
+}
+
+/* Barra com os botões abaixo na 1ª página. */
+.s-controller {
+  position: absolute;
+  display: flex;
+  justify-content: center; /* Verticalmente. */
+  align-items: center; /* Horizontalmente. */
+  margin-top: 3rem;
+  bottom: 1.5rem;
+  width: 100%;
+}
+
+/* Bolinhas dos botões. */
+.s-controller__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; /* Width com mesmo tamanho do heigt para fazer um círculo perfeito. */
+  height: 2.5rem; /* Width com mesmo tamanho do heigt para fazer um círculo perfeito. */
+  border: 2px solid white;
+  border-radius: 50%; /* Para fazer o botão ficar um círculo perfeito. */
+  background-color: var(--primary-color);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1; /* Para que a linha da barra não cubra os botões. */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Para fazer que ao passaro mouse em cima ele cresça um pouco.
+O 1 já é o normal, para ele crescer 10%, usa-se o 1.1. */
+.s-controller__button:hover {
+  transform: scale(1.1);
+}
+
+/* Para colocar espaçamento entre os botões (bolinhas).
+Para pegar o 2° elemento coloca :nth-child(2). */
+.s-controller__button:nth-child(2) {
+  margin: 0 3.75rem;
+}
+
+/* Botão 1 da homepage. */
+.s-controller__button--active {
+  background-color: white;
+  color: var(--primary-color);
+  border: 0.1875rem dashed var(--primary-color); /* Borda vermelha interna do botão. */
+  outline: 0.125rem solid rgb(255, 255, 255); /* Borda externa do botão. */
+  transition: width 2s, height 2s, transform 2s;
+  transform: rotate(180deg);
+}
+
+/* Linha da barra onde tem as bolinhas do menu. */
+.s-controller__line {
+  background-color: white;
+  width: 50%;
+  height: 2px;
+  position: absolute;
+}
+
+/* Animação dos cards. */
+.s-card--hovered .s-card__background {
+  cursor: pointer;
+  opacity: 0; /* Para que ao passar o mouse em cima da imagem o fundo suma. */
+}
+
+/* Classe que está sofrendo alteração no envento do mouseenter do JS. */
+/* Para fazer que ao passaro mouse em cima da imagem do Homem Aranha ele cresça um pouco.
+O 1 já é o normal, para ele crescer 40%, usa-se o 1.4 igual fizemos nas bolinhas da barra seletora. */
+.s-card--hovered .s-card__image {
+  transform: scale(1.4);
+  filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.5));
+  /* Colocando uma sombra nos cards. */
+}
+
+/* 1° cria o id no HTML,depois, cria a função handleMouseEnter e handleMouseLeave no JavaScript,
+depois, usa o before no CSS para que possa colocar uma imagem diferente ao passar o mouse por cima do card do Homem Aranha.*/
+body#spider-man-01-hovered::before {
+  background-image: url("../imagens/pic-sm-bg-01.jpg");
+}
+
+/* 1° cria o id no HTML,depois, cria a função handleMouseEnter e handleMouseLeave no JavaScript,
+depois, usa o before no CSS para que possa colocar uma imagem diferente ao passar o mouse por cima do card do Homem Aranha.*/
+body#spider-man-02-hovered::before {
+  background-image: url("../imagens/pic-sm-bg-02.jpg");
+}
+
+/* 1° cria o id no HTML,depois, cria a função handleMouseEnter e handleMouseLeave no JavaScript,
+depois, usa o before no CSS para que possa colocar uma imagem diferente ao passar o mouse por cima do card do Homem Aranha.*/
+body#spider-man-03-hovered::before {
+  background-image: url("../imagens/pic-sm-bg-03.jpg");
+}
+
+/* Retirar o vermelho do body quando uma nova imagem for aplicada no background ao passar o mouse em cima do card do Homem Aranha. */
+/* [id^="spider-man-"], o [] é para pegar um seletor do body que comece com "palavra definida", nesse caso está pegando o 
+id que comece com spider-man- para pegar todos os ids declarados na 1ª div do HTML. */
+body[id^="spider-man-"]::before {
+  opacity: 1;
+}
+
+/* Para colocar sombra preta e branca em cima dos cards que não estão selecionados, quando passar o mouse em cima do card. */
+body[id^="spider-man-"] .s-card:not(.s-card--hovered) {
+  filter: grayscale(100%);
+}
+
+/* Para colocar o nome do Homem Aranha no centro do card ao passar o mouse em cima. */
+.s-card--hovered .s-card__title {
+  bottom: 50%;
+}
+
+/* Definindo a largura do carrossel. */
+.s-cards-carousel {
+  display: flex;
+  justify-content: center;
+  width: calc(100vw / 3 - 10%);
+  transform-style: preserve-3d; /* Para que ele gire com o 1° reto, mas, os outros 2 abaulem. */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* 3ª e última div, Direitos. */
+.direitos {
+  margin-top: 575px;
+  text-align: left;
+}
+
+.direitos a {
+  font-style: italic;
+  text-decoration: none;
+  align-items: left;
+  margin-left: 43px;
+  cursor: pointer;
+  font-size: 15px;
+  position: relative;
+  color: rgb(9, 9, 12);
+  font-weight: 500; /* Grossura da fonte. */
+}
+
+.direitos img {
+  margin-left: 120px;
+}
+
+.direitos p {
+  margin-left: 10px;
+  font-size: 15px;
+}

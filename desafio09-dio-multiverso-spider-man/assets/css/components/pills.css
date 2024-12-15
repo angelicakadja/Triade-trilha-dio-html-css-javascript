@@ -1,0 +1,20 @@
+/* Div do ano, diretor e snopse do filme. */
+.s-pills ul {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+/* Ano e diretor filme. */
+.s-pills ul li {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 15px;
+  margin: 0 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.s-pills ul li:first-child {
+  margin-left: 0;
+}

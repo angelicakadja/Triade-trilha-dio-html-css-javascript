@@ -1,0 +1,74 @@
+/* Meunu de navegação lateral esquerda, bolinhas 01, 02 e 03. */
+.navigator {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Espaçamento entre as bolinhas do menu de navegação lateral esquerda. */
+.navigator ul li {
+  margin: 60px 0;
+}
+
+/* Retirar o espaçamento entre a 1ª bolinha e seu topo, não precisa ter margin 60px. */
+.navigator ul li:first-child {
+  /* : é pseudo-class, :: é pseudo-element (cria um objeto novo sem que seja criado dentro do HTML). */
+  margin-top: 0;
+}
+
+/* Retirar o espaçamento entre a 3ª bolinha e sua base, não precisa ter margin 60px. */
+.navigator ul li:last-child {
+  /* : é pseudo-class, :: é pseudo-element (cria um objeto novo sem que seja criado dentro do HTML). */
+  margin-bottom: 0;
+}
+
+/* Bolinhas do menu navegação sem passar o mouse por cima. */
+.navigator ul li a {
+  color: white;
+  border: solid 2px white;
+  width: 45px; /* width e height mesmo tamanho para criar um quadrado perfeito. */
+  height: 45px; /* width e height mesmo tamanho para criar um quadrado perfeito. */
+  border-radius: 50%; /* 50% para ele arredondar o quadradinhos, deixando em círculo perfeito. */
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Linha do menu navegação. */
+.navigator::before {
+  /* : é pseudo-class, :: é pseudo-element (cria um objeto novo sem que seja criado dentro do HTML). */
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  z-index: 0;
+}
+
+.navigator ul {
+  z-index: 1;
+}
+
+/* Bolinhas do menu navegação ao passar o mouse por cima. */
+.navigator ul li a:hover, /* : é pseudo-class, :: é pseudo-element (cria um objeto novo sem que seja criado dentro do HTML). */
+.navigator ul li a.active {
+  color: var(--primary-color);
+  border: 5px outset green;
+  font-weight: 800;
+  background-color: rgb(255, 255, 255);
+  transform: scale(1.25);
+  /* Aumentar a bolinha ao passar o mouse por cima. Fica legal também rotateY(0deg) translateZ(25px).*/
+  transition: 0.7s ease-in-out;
+  /* Efeito de transição devagar ao crescer quando passa o mouse por cima da bolinha, para não ficar algo seco e estático. */
+}
+
+/* Aranha do menu navegação. */
+.navigator .navigator__icon {
+  position: absolute;
+  top: -20px;
+}
