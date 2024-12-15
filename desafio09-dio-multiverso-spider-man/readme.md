@@ -3,7 +3,7 @@
 <br />
 <img width="500" src="./assets/readme/homem-aranha-logo.png" /> <br />
 
-> ## 🕷️ Multiversos com HTML e CSS <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Hundred%20Points.png" alt="Hand with Fingers Splayed Light Skin Tone" width="25" height="25" /> <br />
+ ## 🕷️ Multiversos com HTML e CSS <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Hundred%20Points.png" alt="Hand with Fingers Splayed Light Skin Tone" width="25" height="25" /> <br />
 
 </div>
 
