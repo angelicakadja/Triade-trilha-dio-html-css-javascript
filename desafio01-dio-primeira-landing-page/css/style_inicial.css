@@ -88,57 +88,79 @@ button {
   border-radius: 10px 0px 10px 0px;
 }
 
-.course-content {
-  font-weight: 400;
-  line-height: 20px;
-  display: grid;
-  gap: 20px;
-  padding: 70px 7px;
-  background-color: #000000;
-  border-top: 1px solid #31a8dd;
-  border-bottom: 1px solid #31a8dd;
-}
-
-.course-content p {
-  line-height: 30px; /* Espaçamento entre as frases do texto. */
-  font-family: Raleway;
-  font-size: 20px; /* Tamanho da fonte. */
-}
-
-.modules {
-  padding-top: 30px;
-  display: grid;
-  width: max-content;
-  margin: auto;
-  gap: 20px;
-}
-
-.module {
-  background-color: #252525;
-  padding: 15px 40px;
+section#course-content {
+  /* Linha horizontal */
+  margin-top: -4px;
+  width: 900px;
+  height: 0px;
+  left: 190px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
   border: 1px solid #33a8db;
-  border-radius: 26px;
-  box-shadow: inset 3px 3px 5px #000000;
-  color: #ffffff;
 }
 
-.module span {
-  color: #31a8dd;
+section#course-content h2 {
+  margin-top: 70px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #33a8db;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  font-family: Raleway;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 37.57px;
+  letter-spacing: 0.19em;
 }
 
-/* section#transform-world {
-  margin-top: 50px;
-} */
+section#course-content p#paradois {
+  font-family: Raleway;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.78px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.modules-list div.module span {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: #33a8db;
+  border: 1px solid #33a8db;
+  font-size: 15px;
+  background-color: #252525;
+  font-weight: bold;
+  border-top: 2px solid rgb(2, 68, 101);
+  border-bottom: 2px solid rgb(2, 68, 101);
+  border-left: 2px solid rgb(2, 68, 101);
+  border-radius: 57px 57px 57px 57px;
+  margin: 140px 0 -120px 200px;
+  line-height: 18.78px;
+  width: 500px;
+  line-height: 40.78px;
+  background: #252525;
+}
+
+section#transform-world {
+  margin-top: 500px;
+}
 
 #transform-world {
-  width: 440px;
+  width: 500px;
   background-size: cover;
   background-image: url("../img/woman-code.png");
   background-attachment: fixed;
   border-top: 1px solid #33a8db80;
   border-bottom: 1px solid #33a8db80;
-  padding: 230px;
-  text-shadow: 3px 3px #33a8db;
+  padding: 200px;
 }
 
 #transform-world p {
@@ -146,7 +168,7 @@ button {
   /* Converte o texto para letras minúsculas */
   text-transform: lowercase;
   /* Define a largura máxima do texto como 250px */
-  margin-left: -300px;
+  margin-left: -220px;
   margin-top: 5px;
   max-width: 250px;
   /* Define uma sombra de texto */
